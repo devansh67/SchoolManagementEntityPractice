@@ -17,9 +17,9 @@ public class StudentDTO {
 
     Long id;
 
-    @NotEmpty(message = "Student title is mandatory")
-    @Size(min = 1, max = 25, message = "Student title should have minimum 1 characters and maximum of 25 characters")
-    String title;
+    @NotEmpty(message = "Student name is mandatory")
+    @Size(min = 1, max = 25, message = "Student name should have minimum 1 characters and maximum of 25 characters")
+    String name;
 
     Set<SubjectDTO> subjects;
 }

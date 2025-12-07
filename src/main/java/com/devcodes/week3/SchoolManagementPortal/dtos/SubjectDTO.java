@@ -13,6 +13,6 @@ import lombok.experimental.FieldDefaults;
 public class SubjectDTO {
     Long id;
 
-    @NotBlank(message = "Subject name is mandatory")
-    String name;
+    @NotBlank(message = "Subject title is mandatory")
+    String title;
 }
