@@ -24,9 +24,10 @@ public class SubjectEntity {
     String title;
 
     // OWNING SIDE: Subject owns the foreign key (professor_id in subject table)
-    // Many Subjects belong to One Professor (Many-to-One relationship)
+    // Many Subjects can (optionally) belong to One Professor (Many-to-One relationship)
+    // professor is nullable so we can create a Subject first, then link a Professor later.
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "professor_id", nullable = false)
+    @JoinColumn(name = "professor_id")
     @JsonIgnore
     ProfessorEntity professor;
 

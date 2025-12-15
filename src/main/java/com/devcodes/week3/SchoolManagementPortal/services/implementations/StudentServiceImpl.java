@@ -51,7 +51,10 @@ public class StudentServiceImpl implements StudentService {
         studentEntity
                 .getSubjects()
                 .add(subjectEntity);
-        return modelMapper.map(studentEntity, StudentDTO.class);
+
+        // Persist the updated relationship in the join table
+        StudentEntity savedStudent = studentRepository.save(studentEntity);
+        return modelMapper.map(savedStudent, StudentDTO.class);
     }
 
     @Override
